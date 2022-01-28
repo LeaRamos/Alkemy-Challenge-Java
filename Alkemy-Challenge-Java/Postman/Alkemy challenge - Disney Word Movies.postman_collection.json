@@ -1,0 +1,999 @@
+{
+	"info": {
+		"_postman_id": "07c999fa-d1bd-4ba8-a567-624b44b19c33",
+		"name": "Alkemy challenge - Disney Word Movies",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "SIGNUP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"emiakd5@gmail.com\",\r\n    \"password\":\"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SIGNIN",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjb3JyZW9AZ21haWwuY29tIiwiZXhwIjoxNjQzMzU4MjgwLCJpYXQiOjE2NDMzMjIyODB9.TDJHKu9Gj31HuR8P9riZqbpgO98oL8UsiSj1jGHjaDQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"emiakd5@gmail.com\",\r\n    \"password\":\"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Characters",
+			"item": [
+				{
+					"name": "CREATE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbWlha2Q1QGdtYWlsLmNvbSIsImV4cCI6MTY0MzQzOTY3NSwiaWF0IjoxNjQzNDAzNjc1fQ.i2pxfoN0DwPn38ucKqf8yLd-3dIX7pE4FnwKdYQ8bak",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjb3JyZW9AZ21haWwuY29tIiwiZXhwIjoxNjQzMzU4MjgwLCJpYXQiOjE2NDMzMjIyODB9.TDJHKu9Gj31HuR8P9riZqbpgO98oL8UsiSj1jGHjaDQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"image\": null,\r\n        \"name\": \"lola\",\r\n        \"age\": 35,\r\n        \"weight\": 80.0,\r\n        \"history\": \"hola\",\r\n        \"movies\": []\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/characters/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"characters",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbWlha2Q1QGdtYWlsLmNvbSIsImV4cCI6MTY0MzQzOTY3NSwiaWF0IjoxNjQzNDAzNjc1fQ.i2pxfoN0DwPn38ucKqf8yLd-3dIX7pE4FnwKdYQ8bak",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjb3JyZW9AZ21haWwuY29tIiwiZXhwIjoxNjQzMzU4MjgwLCJpYXQiOjE2NDMzMjIyODB9.TDJHKu9Gj31HuR8P9riZqbpgO98oL8UsiSj1jGHjaDQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/characters",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"characters"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ONE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbWlha2Q1QGdtYWlsLmNvbSIsImV4cCI6MTY0MzQzOTY3NSwiaWF0IjoxNjQzNDAzNjc1fQ.i2pxfoN0DwPn38ucKqf8yLd-3dIX7pE4FnwKdYQ8bak",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjb3JyZW9AZ21haWwuY29tIiwiZXhwIjoxNjQzMzU4MjgwLCJpYXQiOjE2NDMzMjIyODB9.TDJHKu9Gj31HuR8P9riZqbpgO98oL8UsiSj1jGHjaDQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/characters/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"characters",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbWlha2Q1QGdtYWlsLmNvbSIsImV4cCI6MTY0MzQzOTY3NSwiaWF0IjoxNjQzNDAzNjc1fQ.i2pxfoN0DwPn38ucKqf8yLd-3dIX7pE4FnwKdYQ8bak",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjb3JyZW9AZ21haWwuY29tIiwiZXhwIjoxNjQzMzU4MjgwLCJpYXQiOjE2NDMzMjIyODB9.TDJHKu9Gj31HuR8P9riZqbpgO98oL8UsiSj1jGHjaDQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"id\": 1,\r\n    \"image\": null,\r\n    \"name\": \"pessdro\",\r\n    \"age\": 35,\r\n    \"weight\": 80.0,\r\n    \"history\": \"hola\",\r\n    \"movies\": []\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/characters/update/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"characters",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbWlha2Q1QGdtYWlsLmNvbSIsImV4cCI6MTY0MzQzOTY3NSwiaWF0IjoxNjQzNDAzNjc1fQ.i2pxfoN0DwPn38ucKqf8yLd-3dIX7pE4FnwKdYQ8bak",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjb3JyZW9AZ21haWwuY29tIiwiZXhwIjoxNjQzMzU4MjgwLCJpYXQiOjE2NDMzMjIyODB9.TDJHKu9Gj31HuR8P9riZqbpgO98oL8UsiSj1jGHjaDQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/characters/delete/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"characters",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET LIST BY NAME",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbWlha2Q1QGdtYWlsLmNvbSIsImV4cCI6MTY0MzQzOTY3NSwiaWF0IjoxNjQzNDAzNjc1fQ.i2pxfoN0DwPn38ucKqf8yLd-3dIX7pE4FnwKdYQ8bak",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjb3JyZW9AZ21haWwuY29tIiwiZXhwIjoxNjQzMzU4MjgwLCJpYXQiOjE2NDMzMjIyODB9.TDJHKu9Gj31HuR8P9riZqbpgO98oL8UsiSj1jGHjaDQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/characters?name=l",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"characters"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "l"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET LIST BY AGE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbWlha2Q1QGdtYWlsLmNvbSIsImV4cCI6MTY0MzQzOTY3NSwiaWF0IjoxNjQzNDAzNjc1fQ.i2pxfoN0DwPn38ucKqf8yLd-3dIX7pE4FnwKdYQ8bak",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/characters?age=35",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"characters"
+							],
+							"query": [
+								{
+									"key": "age",
+									"value": "35"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET LIST BY IDMOVIE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbWlha2Q1QGdtYWlsLmNvbSIsImV4cCI6MTY0MzQzOTY3NSwiaWF0IjoxNjQzNDAzNjc1fQ.i2pxfoN0DwPn38ucKqf8yLd-3dIX7pE4FnwKdYQ8bak",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/characters?idMovie=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"characters"
+							],
+							"query": [
+								{
+									"key": "idMovie",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Gender",
+			"item": [
+				{
+					"name": "CREATE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbWlha2Q1QGdtYWlsLmNvbSIsImV4cCI6MTY0MzQzOTY3NSwiaWF0IjoxNjQzNDAzNjc1fQ.i2pxfoN0DwPn38ucKqf8yLd-3dIX7pE4FnwKdYQ8bak",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"image\": null,\r\n        \"name\": \"ciencia ficcion\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/genders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"genders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbWlha2Q1QGdtYWlsLmNvbSIsImV4cCI6MTY0MzQzOTY3NSwiaWF0IjoxNjQzNDAzNjc1fQ.i2pxfoN0DwPn38ucKqf8yLd-3dIX7pE4FnwKdYQ8bak",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/genders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"genders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ONE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbWlha2Q1QGdtYWlsLmNvbSIsImV4cCI6MTY0MzQzOTY3NSwiaWF0IjoxNjQzNDAzNjc1fQ.i2pxfoN0DwPn38ucKqf8yLd-3dIX7pE4FnwKdYQ8bak",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/genders/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"genders",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbWlha2Q1QGdtYWlsLmNvbSIsImV4cCI6MTY0MzQzOTY3NSwiaWF0IjoxNjQzNDAzNjc1fQ.i2pxfoN0DwPn38ucKqf8yLd-3dIX7pE4FnwKdYQ8bak",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "     {\r\n                \"id\": 3,\r\n                \"name\": \"romance\",\r\n                \"image\": null\r\n        }"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/genders/update/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"genders",
+								"update",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbWlha2Q1QGdtYWlsLmNvbSIsImV4cCI6MTY0MzQzOTY3NSwiaWF0IjoxNjQzNDAzNjc1fQ.i2pxfoN0DwPn38ucKqf8yLd-3dIX7pE4FnwKdYQ8bak",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/genders/delete/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"genders",
+								"delete",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movie",
+			"item": [
+				{
+					"name": "CREATE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbWlha2Q1QGdtYWlsLmNvbSIsImV4cCI6MTY0MzQzOTY3NSwiaWF0IjoxNjQzNDAzNjc1fQ.i2pxfoN0DwPn38ucKqf8yLd-3dIX7pE4FnwKdYQ8bak",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n               \r\n                \"image\": null,\r\n                \"title\": \"Jarra\",\r\n                \"createdDate\": null,\r\n                \"qualification\":2,\r\n                \"characters\": []\r\n        \r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbWlha2Q1QGdtYWlsLmNvbSIsImV4cCI6MTY0MzQzOTY3NSwiaWF0IjoxNjQzNDAzNjc1fQ.i2pxfoN0DwPn38ucKqf8yLd-3dIX7pE4FnwKdYQ8bak",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ONE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbWlha2Q1QGdtYWlsLmNvbSIsImV4cCI6MTY0MzQzOTY3NSwiaWF0IjoxNjQzNDAzNjc1fQ.i2pxfoN0DwPn38ucKqf8yLd-3dIX7pE4FnwKdYQ8bak",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/movies/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"movies",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbWlha2Q1QGdtYWlsLmNvbSIsImV4cCI6MTY0MzQzOTY3NSwiaWF0IjoxNjQzNDAzNjc1fQ.i2pxfoN0DwPn38ucKqf8yLd-3dIX7pE4FnwKdYQ8bak",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n                \"idMovie\": 3,\r\n                \"image\": null,\r\n                \"title\": \"cabello raro\",\r\n                \"createdDate\": \"2022-01-24\",\r\n                \"qualification\": 4,\r\n                \"characters\": [ ]\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/movies/update/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"movies",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbWlha2Q1QGdtYWlsLmNvbSIsImV4cCI6MTY0MzQzOTY3NSwiaWF0IjoxNjQzNDAzNjc1fQ.i2pxfoN0DwPn38ucKqf8yLd-3dIX7pE4FnwKdYQ8bak",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/movies/delete/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"movies",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET LIST BY TITLE",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbWlha2Q1QGdtYWlsLmNvbSIsImV4cCI6MTY0MzQzOTY3NSwiaWF0IjoxNjQzNDAzNjc1fQ.i2pxfoN0DwPn38ucKqf8yLd-3dIX7pE4FnwKdYQ8bak",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/movies?name=w",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"movies"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "w"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET LIST BY ID GENDER",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbWlha2Q1QGdtYWlsLmNvbSIsImV4cCI6MTY0MzQzOTY3NSwiaWF0IjoxNjQzNDAzNjc1fQ.i2pxfoN0DwPn38ucKqf8yLd-3dIX7pE4FnwKdYQ8bak",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/movies?idGender=3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"movies"
+							],
+							"query": [
+								{
+									"key": "idGender",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET LIST ORDER ASC",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbWlha2Q1QGdtYWlsLmNvbSIsImV4cCI6MTY0MzQzOTY3NSwiaWF0IjoxNjQzNDAzNjc1fQ.i2pxfoN0DwPn38ucKqf8yLd-3dIX7pE4FnwKdYQ8bak",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/movies?orden=asc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"movies"
+							],
+							"query": [
+								{
+									"key": "orden",
+									"value": "asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET LIST ORDER DESC",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbWlha2Q1QGdtYWlsLmNvbSIsImV4cCI6MTY0MzQzOTY3NSwiaWF0IjoxNjQzNDAzNjc1fQ.i2pxfoN0DwPn38ucKqf8yLd-3dIX7pE4FnwKdYQ8bak",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/movies?orden=desc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"movies"
+							],
+							"query": [
+								{
+									"key": "orden",
+									"value": "desc"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
